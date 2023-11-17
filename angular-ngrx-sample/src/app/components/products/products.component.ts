@@ -10,6 +10,7 @@ import { selectProducts } from 'src/app/states/products/selector/product.selecto
 import { actions } from './table.action.configuration';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { AddProductComponent } from '../add-product/add-product.component';
+import { remove } from 'src/app/states/products/action/product.action';
 
 @Component({
   selector: 'app-products',
@@ -38,8 +39,9 @@ export class ProductsComponent {
   }
 
 
-  deleteProduct(id: number) {
-    console.log(id);
+  deleteProduct(product: Product) {
+    console.log(product.id);
+    this.store.dispatch(remove({ product: product }))
   }
 
 }
