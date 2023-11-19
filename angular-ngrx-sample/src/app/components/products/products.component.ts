@@ -34,7 +34,6 @@ export class ProductsComponent {
   }
 
   editProduct(id: number) {
-    console.log(id);
     this.id = id;
   }
 
